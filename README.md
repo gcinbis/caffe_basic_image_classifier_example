@@ -5,9 +5,9 @@ description: A Basic Image Classifier Fine-tuning and Image Classification Examp
 
 # Introduction
 
-This is a basic image classification example in Caffe (under Linux) for instructional purposes.
+This is a basic image classification example in Caffe (under Linux), using C++. The example is provided for instructional purposes.
 
-Currently the code is minimalistic, and requires only basic linux utilities and the development environment
+The main code is minimalistic, and requires only basic linux utilities and the development environment
 necessary to compile the Caffe library.
 
 # Install Caffe
@@ -15,19 +15,19 @@ necessary to compile the Caffe library.
 Compile Caffe under some directory (`CAFFEROOT`) following the instructions in
 http://caffe.berkeleyvision.org/installation.html
 
-Note that you don't need root priviledges to perform this step. `CAFFEROOT` can be something like ~/caffe.
-Also, you don't need a full-fledged installation. For instance, the GPU support and python/matlab interfaces
+Note that you don't need root priviledges to perform this step. `CAFFEROOT` can be something like `~/caffe`.
+Also, you don't need a full-fledged installation. For instance, the GPU support and the python interface
 are not crucial.
 
-Add the following line to your ~/.bashrc (or ~/.profile, depending on your system settings):
+Add the following line to your `~/.bashrc` (or `~/.profile`, depending on your system settings):
 ```
 export CAFFEROOT="/path/to/your/caffe/installation"
 ```
 When you open a new terminal, `echo $CAFFEROOT` should print the Caffe path properly.
 
 Beware that compilation may not be trivial, especially if you are unfamiliar with the Linux environment.
-If you encounter any issues, search Caffe forums and stackoverflow: it is likely that other people have
-encountered similar issues.
+If you encounter any issues, search about it in Caffe forums, stackoverflow, etc: it is likely that other people
+have encountered similar issues.
 
 Finally, execute the following to download the ImageNet statistics that are needed for using the pre-trained
 Caffe model:
@@ -48,12 +48,12 @@ $CAFFEROOT/build/tools/caffe train -solver solver.prototxt \
     -weights $CAFFEROOT/models/bvlc_reference_caffenet/bvlc_reference_caffenet.caffemodel -gpu 0
 ```
 Since we initialize our model parameteres using `bvlc_reference_caffenet.caffemodel`, this procedure is known
-as fine-tuning. During training, caffe will occasionally print performance estimations made using the
-validation set samples. You may optimize the architecture and/or optimization hyper-parameters 
-using the validation set performance.
+as fine-tuning. During training, caffe will occasionally print performance estimations made on 
+validation set samples. You can tune the architecture details and/or optimization hyper-parameters 
+based on the validation set performance.
 
-# Apply the classifier onto novel images
-In order to apply your classifier onto a test image (ie. an image that is not included in the train or the
+# Apply the classifier to novel images
+In order to apply your classifier to a test image (ie. an image that is not included in the train or the
 validation set), use the following commands:
 ```
 test_image_path=/path/to/test/file.jpg
@@ -66,12 +66,12 @@ $CAFFEROOT/build/examples/cpp_classification/classification.bin \
 ```
 deploy.prototxt basically contains a simplified, test-only version of the `train_val.prototxt` (just
 diff two files to understand the deploy.prototxt contents). Therefore, if you make any 
-architectural changes in `train_val.prototxt` (before training), update `deploy.prototxt`.
+architectural changes in `train_val.prototxt` (before training), update `deploy.prototxt`
 accordingly.
 
 # References
 
-This example is based on the example codes provided at http://caffe.berkeleyvision.org/ and in the 
-Caffe source code.
+This example is based on the example codes and models provided at http://caffe.berkeleyvision.org and in the 
+original Caffe source code.
 
 

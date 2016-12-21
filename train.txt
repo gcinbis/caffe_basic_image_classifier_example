@@ -12,5 +12,6 @@ Ids should follow the order of the classes in classnames.txt
 
 Typically, within each class, a random subset of all training images (eg., 50% percent of images) 
 are listed within train.txt, and the remaining ones are used as the validation images (listed within val.txt). 
+The `dirs2split.py` can be useful for quickly building a pair of train.txt and val.txt files, in certain cases.
 
 
