@@ -1,0 +1,16 @@
+This file should only contain a list of <path> <class_id> pairs. That is, it should look like this:
+
+image_path_1 class_id_1
+image_path_2 class_id_2
+...
+image_path_N class_id_N
+
+where N is the number of training images.
+
+Class ids should be integers in the range [0,C), where C is the number of classes.
+Ids should follow the order of the classes in classnames.txt 
+
+Typically, within each class, a random subset of all training images (eg., 50% percent of images) 
+are listed within train.txt, and the remaining ones are used as the validation images (listed within val.txt). 
+
+

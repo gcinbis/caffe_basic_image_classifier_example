@@ -1,0 +1,8 @@
+This file should be replaced by a content that looks like this:
+
+classname_1
+classname_2
+...
+classname_C
+
+where C is the number of classes.

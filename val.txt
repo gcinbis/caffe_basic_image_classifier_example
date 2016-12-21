@@ -1,0 +1,2 @@
+Replace this file's contents with a validation set list, in the same format as in train.txt
+
